@@ -4,6 +4,7 @@
     <option name="projectPerEditor">
       <map>
         <entry key="CityEvents/Views/MainWindow.axaml" value="CityEvents/CityEvents.csproj" />
+        <entry key="CityEvents/Views/TabContentControl.axaml" value="CityEvents/CityEvents.csproj" />
       </map>
     </option>
   </component>

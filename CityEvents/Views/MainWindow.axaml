@@ -3,10 +3,9 @@
         xmlns:vm="using:CityEvents.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:ext="clr-namespace:CityEvents.Converters"
         xmlns:cityEvents="clr-namespace:CityEvents"
         xmlns:views="clr-namespace:CityEvents.Views"
-        mc:Ignorable="d" d:DesignWidth="550" d:DesignHeight="450" Width="550" Height="450"
+        mc:Ignorable="d" d:DesignWidth="550" d:DesignHeight="550" Width="550" Height="550"
         x:Class="CityEvents.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="CityEvents">
@@ -16,9 +15,6 @@
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-    <Window.Resources>
-        <ext:BitmapAssetValueConverter x:Key="variableImage"/>
-    </Window.Resources>
     <Window.Styles>
         <Style Selector="TextBlock.Title">
             <Setter Property="FontSize" Value="14"/>

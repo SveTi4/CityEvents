@@ -2,25 +2,87 @@
 <ArrayOfCityEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <CityEvent>
-        <Title>Cinema</Title>
-        <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in luctus urna. Morbi sit amet metus pellentesque, rhoncus urna sed, varius lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce tincidunt turpis odio, id condimentum odio convallis sed. Nulla facilisi. Aenean feugiat augue sit amet massa consectetur, nec tincidunt quam efficitur. Fusce aliquam urna dolor, eget dapibus nunc posuere non</Description>
-        <ImgLink>Assets/icons/children.png</ImgLink>
-        <Date>01.01.2023</Date>
+        <Title>Космодрайв</Title>
+        <Description>Выставка космоса для всей семьи Космодрайв в Новосибирске</Description>
+        <ImgLink>Assets/img/photo600-9508676.jpg</ImgLink>
+        <Date>06.04.2023</Date>
+        <Category>
+            <Kid>true</Kid>
+            <Online>true</Online>
+        </Category>
+        <Price>649</Price>
+    </CityEvent>
+    <CityEvent>
+        <Title>Жаворонки</Title>
+        <Description>Будем печь обрядовые булочки, а потом их с пылу, с жару да с чайком…ммм… .вкуснота.
+
+            А пока булочки пекутся сказку из старого сундука посмотрим, весеннюю песню послушаем.
+
+            Ждем деток от 4-х до 8-ми лет с родителями.
+
+            Билет приобретается для каждого гостя.</Description>
+        <ImgLink>Assets/img/Screenshot_1.png</ImgLink>
+        <Date>18.03.2023</Date>
+        <Category>
+            <Kid>true</Kid>
+            <Education>true</Education>
+        </Category>
+        <Price>0.00</Price>
+    </CityEvent>
+    <CityEvent>
+        <Title>Страшные сказки в темноте</Title>
+        <Description></Description>
+        <ImgLink>Assets/avalonia-logo.ico</ImgLink>
+        <Date>11.03.2023</Date>
         <Category>
             <Kid>true</Kid>
             <Show>true</Show>
         </Category>
-        <Price>1000</Price>
+        <Price>0.00</Price>
     </CityEvent>
     <CityEvent>
-        <Title>Cinema</Title>
-        <Description>Cyberpunk</Description>
-        <ImgLink>Assets/icons/culture.png</ImgLink>
-        <Date>01.01.2023</Date>
+        <Title>Обзорная экскурсия по историческому центру Новосибирска</Title>
+        <Description>Сначала мы осмотрим здание оперного театра — выдающийся памятник архитектуры эпохи конструктивизма. Это здание по праву считается визитной карточкой города. Узнаем историю его строительства, которая была не простой, а временами и трагической. Познакомимся с архитектурным ансамблем площади Ленина — центра Новосибирска. Все здания, стоящие там, решены в стиле конструктивизм и являются памятниками архитектуры регионального значения.</Description>
+        <ImgLink>Assets/img/Screenshot_2.png</ImgLink>
+        <Date>11.03.2023</Date>
         <Category>
             <Culture>true</Culture>
-            <Show>true</Show>
+            <Excursions>true</Excursions>
         </Category>
-        <Price>1000</Price>
+        <Price>0.00</Price>
+    </CityEvent>
+    <CityEvent>
+        <Title>Дискотека 90-х</Title>
+        <Description>Поклонники «Танцплощадки» и «Эстрады» могут крутить бигуди и доставать с антресолей туфли на платформе — а мы тем временем начищаем зеркальный шар и готовы представить новую программу — «Диско-хиты 90-х»!
+            Весь вечер с вами — артисты Михаил Селезнёв, Елена Дриневская, Екатерина Жирова, Вадим Гусельников, Константин Телегин, а также любимый кавер-бэнд — «Red Torch Chili Peppers»!
+            Только любимые и незабываемые хиты групп «Комбинация», «Кар-Мэн», «Белый орёл» и многих других ждут вас в программе. И никаких пародий! </Description>
+        <ImgLink>Assets/img/Screenshot_3.png</ImgLink>
+        <Date>11.03.2023</Date>
+        <Category>
+            <Party>true</Party>
+        </Category>
+        <Price>300</Price>
+    </CityEvent>
+    <CityEvent>
+        <Title>Турниры по игре в "Что? Где? Когда?"</Title>
+        <Description>Вам нравятся интеллектуальные игры? Вы любите играть в квизы и вам хочется чего-то посложнее? Собирайте команду до 6 человек и попробуйте сыграть в ЧГК!</Description>
+        <ImgLink>Assets/img/Screenshot_4.png</ImgLink>
+        <Date>11.03.2023</Date>
+        <Category>
+            <Lifestyle>true</Lifestyle>
+            <Party>true</Party>
+        </Category>
+        <Price>700</Price>
+    </CityEvent>
+    <CityEvent>
+        <Title>Праздник водного туризма на Шипунихе</Title>
+        <Description>Праздник водного туризма на Шипунихе состоится 8-9 апреля 2023 года. Это недетский праздник в том смысле, что</Description>
+        <ImgLink>Assets/img/bMYngi2YdEqzrGucFEm3R686mm-56dIY0mlmfFUZgked4Zq_ibIx9wgN2j8b88h-JoayHQ.jpg</ImgLink>
+        <Date>11.03.2023</Date>
+        <Category>
+            <Culture>true</Culture>
+            <Sport>true</Sport>
+        </Category>
+        <Price>700</Price>
     </CityEvent>
 </ArrayOfCityEvent>
