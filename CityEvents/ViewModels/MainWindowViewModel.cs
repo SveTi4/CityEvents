@@ -1,37 +1,77 @@
 ﻿using System;
+using System.Collections.ObjectModel;
+using System.Reactive.Linq;
 using CityEvents.Models;
+using DynamicData;
 using ReactiveUI;
 
 namespace CityEvents.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private CityEvent[] _TabEvents;
-        // private string _TabTitle;
+        private CityEvent[] _CityEvents;
+        
+        private readonly ReadOnlyObservableCollection<CityEvent> _cItems1;
+        private readonly ReadOnlyObservableCollection<CityEvent> _cItems2;
+        private readonly ReadOnlyObservableCollection<CityEvent> _cItems3;
+        private readonly ReadOnlyObservableCollection<CityEvent> _cItems4;
+        private readonly ReadOnlyObservableCollection<CityEvent> _cItems5;
+        private readonly ReadOnlyObservableCollection<CityEvent> _cItems6;
+        private readonly ReadOnlyObservableCollection<CityEvent> _cItems7;
+        private readonly ReadOnlyObservableCollection<CityEvent> _cItems8;
+        private readonly ReadOnlyObservableCollection<CityEvent> _cItems9;
         
         public MainWindowViewModel()
         {
-            TabEvents = new CityEvent[]
+            CityEvent[] events = Serializer<CityEvent[]>.Load("../../../events.xml");
+
+            SourceList<CityEvent> sourceList = new();
+
+            foreach (var e in events)
             {
-                new CityEvent(){Title= "Event title 1", Date = "12.04.2023", Description = " Lorem ipsum dolor sit " +
-                    "amet, consectetur adipiscing elit. Duis in luctus urna. Morbi sit amet metus pellentesque, " +
-                    "rhoncus urna sed, varius lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus. " +
-                    "Fusce tincidunt turpis odio, id condimentum odio convallis sed. Nulla facilisi. Aenean feugiat " +
-                    "augue sit amet massa consectetur, nec tincidunt quam efficitur. Fusce aliquam urna dolor, eget " +
-                    "dapibus nunc posuere non. Curabitur ipsum velit, sodales at scelerisque id, commodo vitae lorem. " +
-                    "Curabitur bibendum ut elit vel egestas. Donec venenatis elit et sapien consequat faucibus. Duis " +
-                    "gravida enim commodo pellentesque rutrum. Cras efficitur sapien augue, ut convallis odio finibus " +
-                    "dignissim. Aliquam vitae leo elementum, hendrerit sem at, auctor elit. Nullam consequat tortor et " +
-                    "erat tempor volutpat. Vivamus feugiat tortor vel urna gravida viverra. Curabitur sodales a arcu " +
-                    "sit amet fermentum. ", Price = 0},
-                new CityEvent(){Title= "Event title 2", Date = "08.03.2023",  Description = "Description 2", Price = 200},
-                new CityEvent(){Title= "Event title 3", Date = "10.05.2023",  Description = "Description 3", Price = 100},
-                new CityEvent(){Title= "Event title 4", Date = "01.06.2023",  Description = "Description 4", Price = 0},
-            };
+                sourceList.Add(e);
+            }
+
+            sourceList.Connect().AutoRefresh(x => x.Category)
+                .Filter(x => x.Category.Kid)
+                .ObserveOn(RxApp.MainThreadScheduler).Bind(out _cItems1).Subscribe();
+            sourceList.Connect().AutoRefresh(x => x.Category)
+                .Filter(x => x.Category.Sport)
+                .ObserveOn(RxApp.MainThreadScheduler).Bind(out _cItems2).Subscribe();
+            sourceList.Connect().AutoRefresh(x => x.Category)
+                .Filter(x => x.Category.Culture)
+                .ObserveOn(RxApp.MainThreadScheduler).Bind(out _cItems3).Subscribe();
+            sourceList.Connect().AutoRefresh(x => x.Category)
+                .Filter(x => x.Category.Excursions)
+                .ObserveOn(RxApp.MainThreadScheduler).Bind(out _cItems4).Subscribe();
+            sourceList.Connect().AutoRefresh(x => x.Category)
+                .Filter(x => x.Category.Lifestyle)
+                .ObserveOn(RxApp.MainThreadScheduler).Bind(out _cItems5).Subscribe();
+            sourceList.Connect().AutoRefresh(x => x.Category)
+                .Filter(x => x.Category.Party)
+                .ObserveOn(RxApp.MainThreadScheduler).Bind(out _cItems6).Subscribe();
+            sourceList.Connect().AutoRefresh(x => x.Category)
+                .Filter(x => x.Category.Education)
+                .ObserveOn(RxApp.MainThreadScheduler).Bind(out _cItems7).Subscribe();
+            sourceList.Connect().AutoRefresh(x => x.Category)
+                .Filter(x => x.Category.Online)
+                .ObserveOn(RxApp.MainThreadScheduler).Bind(out _cItems8).Subscribe();
+            sourceList.Connect().AutoRefresh(x => x.Category)
+                .Filter(x => x.Category.Show)
+                .ObserveOn(RxApp.MainThreadScheduler).Bind(out _cItems9).Subscribe();
         }
 
-        public CityEvent[] TabEvents { get => _TabEvents; set => this.RaiseAndSetIfChanged(ref _TabEvents, value); }
-        // public string TabTitle { get => _TabTitle; set => this.RaiseAndSetIfChanged(ref _TabTitle, value); }
+        public CityEvent[] CityEvents { get => _CityEvents; set => this.RaiseAndSetIfChanged(ref _CityEvents, value); }
+        
+        public ReadOnlyObservableCollection<CityEvent> CItems1 => _cItems1;
+        public ReadOnlyObservableCollection<CityEvent> CItems2 => _cItems2;
+        public ReadOnlyObservableCollection<CityEvent> CItems3 => _cItems3;
+        public ReadOnlyObservableCollection<CityEvent> CItems4 => _cItems4;
+        public ReadOnlyObservableCollection<CityEvent> CItems5 => _cItems5;
+        public ReadOnlyObservableCollection<CityEvent> CItems6 => _cItems6;
+        public ReadOnlyObservableCollection<CityEvent> CItems7 => _cItems7;
+        public ReadOnlyObservableCollection<CityEvent> CItems8 => _cItems8;
+        public ReadOnlyObservableCollection<CityEvent> CItems9 => _cItems9;
     }
 }
 

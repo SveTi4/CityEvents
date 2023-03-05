@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCityEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <CityEvent>
+        <Title>Cinema</Title>
+        <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in luctus urna. Morbi sit amet metus pellentesque, rhoncus urna sed, varius lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce tincidunt turpis odio, id condimentum odio convallis sed. Nulla facilisi. Aenean feugiat augue sit amet massa consectetur, nec tincidunt quam efficitur. Fusce aliquam urna dolor, eget dapibus nunc posuere non</Description>
+        <ImgLink>Assets/icons/children.png</ImgLink>
+        <Date>01.01.2023</Date>
+        <Category>
+            <Kid>true</Kid>
+            <Show>true</Show>
+        </Category>
+        <Price>1000</Price>
+    </CityEvent>
+    <CityEvent>
+        <Title>Cinema</Title>
+        <Description>Cyberpunk</Description>
+        <ImgLink>Assets/icons/culture.png</ImgLink>
+        <Date>01.01.2023</Date>
+        <Category>
+            <Culture>true</Culture>
+            <Show>true</Show>
+        </Category>
+        <Price>1000</Price>
+    </CityEvent>
+</ArrayOfCityEvent>
