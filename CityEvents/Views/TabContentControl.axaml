@@ -1,0 +1,33 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:CityEvents.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="CityEvents.Views.TabContentControl">
+    
+    <ItemsControl Items="{Binding Path=Events, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:TabContentControl}}}">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <Grid Background="#F0F0E6" Margin="10 0 10 10" RowDefinitions="150, Auto" MinHeight="300" ColumnDefinitions="1*">
+                    <Rectangle Stretch="UniformToFill" Width="150" Height="150"  Fill="Gray"/>
+                    <StackPanel Grid.Row="1">
+                        <TextBlock Classes="Title"  Text="{Binding Title}" />
+                        <TextBlock Classes="Text Date" Text="{Binding Date}"/>
+                        <TextBlock Classes="Text Description" TextWrapping="Wrap" Text="{Binding Description}"/>
+                        <Grid ColumnDefinitions="1*, Auto, Auto">
+                            <TextBlock Classes="Text Price" Grid.Column="0" Text="Стоимость: "/>
+                            <TextBlock Classes="Text Price" Grid.Column="1" Text="{Binding Price}"/>
+                            <TextBlock Classes="Text Price" Grid.Column="2" Text=" Р "/>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <WrapPanel ItemWidth="170" Orientation="Horizontal"/>
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+    </ItemsControl>
+</UserControl>

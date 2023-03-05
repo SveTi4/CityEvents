@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ext="clr-namespace:CityEvents.Converters"
         xmlns:cityEvents="clr-namespace:CityEvents"
+        xmlns:views="clr-namespace:CityEvents.Views"
         mc:Ignorable="d" d:DesignWidth="550" d:DesignHeight="450" Width="550" Height="450"
         x:Class="CityEvents.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
@@ -45,84 +46,64 @@
             <Setter Property="FontWeight" Value="500"/>
         </Style>
     </Window.Styles>
-    <TabControl>
-            <!-- <TabItem> -->
-            <!--     <TabItem.Header> -->
-            <!--         <TextBlock Text="Для детей"/> -->
-            <!--     </TabItem.Header> -->
-            <!--     <TextBlock Text="1"/>  -->
-            <!-- </TabItem> -->
+    <StackPanel>
+        <TabControl SelectedIndex="{Binding TabIndex}">
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Для детей"/>
+                </TabItem.Header>
+                <views:TabContentControl Events="{Binding CItems1}"/>
+            </TabItem>
+    
             <TabItem>
                 <TabItem.Header>
                     <TextBlock Text="Спорт"/>
                 </TabItem.Header>
-                    <ItemsControl Items="{Binding TabEvents}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <Grid Background="#F0F0E6" Margin="10 0 10 10" RowDefinitions="150, Auto" MinHeight="300" ColumnDefinitions="1*">
-                                    <Rectangle Stretch="UniformToFill" Width="150" Height="150"  Fill="Gray"/>
-                                    <StackPanel Grid.Row="1">
-                                        <TextBlock Classes="Title"  Text="{Binding Title}" />
-                                        <TextBlock Classes="Text Date" Text="{Binding Date}"/>
-                                        <TextBlock Classes="Text Description" TextWrapping="Wrap" Text="{Binding Description}"/>
-                                        <Grid ColumnDefinitions="1*, Auto, Auto">
-                                            <TextBlock Classes="Text Price" Grid.Column="0" Text="Стоимость: "/>
-                                            <TextBlock Classes="Text Price" Grid.Column="1" Text="{Binding Price}"/>
-                                            <TextBlock Classes="Text Price" Grid.Column="2" Text=" Р "/>
-                                        </Grid>
-                                    </StackPanel>
-                                </Grid>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <WrapPanel ItemWidth="170" Orientation="Horizontal"/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                    </ItemsControl>
+                <views:TabContentControl Events="{Binding CItems2}"/>
             </TabItem>
             <TabItem>
                 <TabItem.Header>
-                    <TextBlock Text="Культура"/> 
+                    <TextBlock Text="Культура"/>
                 </TabItem.Header>
-                <TextBlock Text="3"/> 
+                <views:TabContentControl Events="{Binding CItems3}"/>
             </TabItem>
             <TabItem>
                 <TabItem.Header>
-                    <TextBlock Text="Экскурсии"/> 
+                    <TextBlock Text="Экскурсии"/>
                 </TabItem.Header>
-                <TextBlock Text="4"/> 
+                <views:TabContentControl Events="{Binding CItems4}"/>
             </TabItem>
             <TabItem>
                 <TabItem.Header>
-                    <TextBlock Text="Образ жизни"/> 
+                    <TextBlock Text="Образ жизни"/>
                 </TabItem.Header>
-                <TextBlock Text="5"/> 
+                <views:TabContentControl Events="{Binding CItems5}"/>
             </TabItem>
             <TabItem>
                 <TabItem.Header>
-                    <TextBlock Text="Вечеринки"/> 
+                    <TextBlock Text="Вечеринки"/>
                 </TabItem.Header>
-                <TextBlock Text="6"/> 
+                <views:TabContentControl Events="{Binding CItems6}"/>
             </TabItem>
             <TabItem>
                 <TabItem.Header>
-                    <TextBlock Text="Образование"/> 
+                    <TextBlock Text="Образование"/>
                 </TabItem.Header>
-                <TextBlock Text="7"/> 
+                <views:TabContentControl Events="{Binding CItems7}"/>
             </TabItem>
             <TabItem>
                 <TabItem.Header>
-                    <TextBlock Text="Онлайн"/> 
+                    <TextBlock Text="Онлайн"/>
                 </TabItem.Header>
-                <TextBlock Text="8"/> 
+                <views:TabContentControl Events="{Binding CItems8}"/>
             </TabItem>
             <TabItem>
                 <TabItem.Header>
-                    <TextBlock Text="Шоу"/> 
+                    <TextBlock Text="Шоу"/>
                 </TabItem.Header>
-                <TextBlock Text="9"/> 
+                <views:TabContentControl Events="{Binding CItems9}"/>
             </TabItem>
         </TabControl>
+    </StackPanel>
 
 </Window>
