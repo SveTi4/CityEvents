@@ -1,0 +1,128 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:CityEvents.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ext="clr-namespace:CityEvents.Converters"
+        xmlns:cityEvents="clr-namespace:CityEvents"
+        mc:Ignorable="d" d:DesignWidth="550" d:DesignHeight="450" Width="550" Height="450"
+        x:Class="CityEvents.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="CityEvents">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    <Window.Resources>
+        <ext:BitmapAssetValueConverter x:Key="variableImage"/>
+    </Window.Resources>
+    <Window.Styles>
+        <Style Selector="TextBlock.Title">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0 5 0 5"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style Selector="TextBlock.Text">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="TextAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="0 4 0 4"/>
+            <Setter Property="Padding" Value="6 0 6 0"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style Selector="TextBlock.Date">
+            <Setter Property="FontStyle" Value="Italic"/>
+            <Setter Property="FontWeight" Value="500"/>
+        </Style>
+        <Style Selector="TextBlock.Description">
+            
+        </Style>
+        <Style Selector="TextBlock.Price">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontStyle" Value="Italic"/>
+            <Setter Property="FontWeight" Value="500"/>
+        </Style>
+    </Window.Styles>
+    <TabControl>
+            <!-- <TabItem> -->
+            <!--     <TabItem.Header> -->
+            <!--         <TextBlock Text="Для детей"/> -->
+            <!--     </TabItem.Header> -->
+            <!--     <TextBlock Text="1"/>  -->
+            <!-- </TabItem> -->
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Спорт"/>
+                </TabItem.Header>
+                    <ItemsControl Items="{Binding TabEvents}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Background="#F0F0E6" Margin="10 0 10 10" RowDefinitions="150, Auto" MinHeight="300" ColumnDefinitions="1*">
+                                    <Rectangle Stretch="UniformToFill" Width="150" Height="150"  Fill="Gray"/>
+                                    <StackPanel Grid.Row="1">
+                                        <TextBlock Classes="Title"  Text="{Binding Title}" />
+                                        <TextBlock Classes="Text Date" Text="{Binding Date}"/>
+                                        <TextBlock Classes="Text Description" TextWrapping="Wrap" Text="{Binding Description}"/>
+                                        <Grid ColumnDefinitions="1*, Auto, Auto">
+                                            <TextBlock Classes="Text Price" Grid.Column="0" Text="Стоимость: "/>
+                                            <TextBlock Classes="Text Price" Grid.Column="1" Text="{Binding Price}"/>
+                                            <TextBlock Classes="Text Price" Grid.Column="2" Text=" Р "/>
+                                        </Grid>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel ItemWidth="170" Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Культура"/> 
+                </TabItem.Header>
+                <TextBlock Text="3"/> 
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Экскурсии"/> 
+                </TabItem.Header>
+                <TextBlock Text="4"/> 
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Образ жизни"/> 
+                </TabItem.Header>
+                <TextBlock Text="5"/> 
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Вечеринки"/> 
+                </TabItem.Header>
+                <TextBlock Text="6"/> 
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Образование"/> 
+                </TabItem.Header>
+                <TextBlock Text="7"/> 
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Онлайн"/> 
+                </TabItem.Header>
+                <TextBlock Text="8"/> 
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Шоу"/> 
+                </TabItem.Header>
+                <TextBlock Text="9"/> 
+            </TabItem>
+        </TabControl>
+
+</Window>
